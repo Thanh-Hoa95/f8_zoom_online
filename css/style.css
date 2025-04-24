@@ -1,3 +1,13 @@
+/* List */
+
+.list a {
+  font-size: 25px;
+  text-align: center;
+  color: #179ba4;
+  text-decoration: none;
+}
+
+
 /* CV */
 
 .cv {
