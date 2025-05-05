@@ -263,3 +263,18 @@ button,
   visibility: visible;
   opacity: 1;
 }
+.link-home {
+  position: fixed;
+  top: 160px;
+  right: 20px;
+  height: 42px;
+  padding: 8px;
+  border-radius: 10px;
+  color: var(--primary-color);
+  border: 1px solid currentColor;
+  z-index: 999999;
+  background: url(https://xuanphao19.github.io/F8_Pro_practice/assets/img/Small_icon/home.svg) center / cover no-repeat
+    content-box;
+  padding: 0.8rem;
+  transition: padding 0.3s ease, color 0.3s ease, background 0.3s ease, visibility 0.3s ease;
+}
