@@ -6,9 +6,18 @@
     <link rel="icon" type="image/x-icon" href="./favicon.svg" />
 
     <title>F8 Zoom Assignments</title>
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://xuanphao19.github.io/F8-Zoom-Assignments/" />
+    <link rel="canonical" href="https://xuanphao19.github.io/F8-Zoom-Assignments/" />
+    <meta property="og:title" content="Join F8's online courses to learn programming and get a job." />
     <meta
       name="description"
       content="Learn programming to get a job. Join F8's online courses to learn programming and get a job. We have a community of over 1 million members, and we are here to help you succeed in your career." />
+    <meta
+      property="og:image"
+      content="https://xuanphao19.github.io/F8-Zoom-Assignments/assets/images/image/65b67e8b9f5a4.png" />
+    <meta property="og:image:width" content="630" />
+    <meta property="og:image:height" content="630" />
 
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet" />
 
@@ -133,18 +142,135 @@
 
         <div id="storages" class="storages">
           <div class="sidebar">
-            <div class="lesson-chapter">
-              <div class="chapter-title">Chapter 1</div>
-              <div class="chapter-desc">HTML - CSS</div>
-              <ul class="lesson-list">
-                <li class="lesson">Client - Server</li>
-                <li class="lesson">Client - Server</li>
-                <li class="lesson">Client - Server</li>
-              </ul>
+            <div class="course-structure">
+              <a href="#preface" class="foreword">Lời nói đầu</a>
+              <div class="structure">Course Structure:</div>
+              <div class="topic">Frontend Exercises:</div>
+              <div class="unit">
+                <div class="unit-title">
+                  <label class="open-lessons" for="html-css-lessons">HTML - CSS / Khoa học máy tính:</label>
+                  <label class="close-lessons" for="close-lessons">HTML - CSS / Khoa học máy tính::</label>
+                </div>
+                <input type="radio" name="check-lessons" id="html-css-lessons" />
+                <ul class="lesson-list">
+                  <li class="lesson">
+                    <a href="#session-1" class="lesson-link">1. Client - Server, HTML cơ bản</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-2" class="lesson-link">2. Attribute, Inline, Block, CSS cơ bản</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-3" class="lesson-link">3. Kế thừa, Simple selectors, Box model</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-4" class="lesson-link">4. Forms và các thuộc tính CSS cơ bản</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-5" class="lesson-link">5. Pseudo, units và colors</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-6" class="lesson-link">6. Flexbox và dàn trang</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-7" class="lesson-link">7. Thực hành code giao diện web</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-8" class="lesson-link">8. Position, transition và transform</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">9. Animation, BEM, Tags: table, iframe, video và audio</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="unit">
+                <div class="unit-title">
+                  <label class="open-lessons" for="JavaScript-lessons">JavaScript:</label>
+                  <label class="close-lessons" for="close-lessons">JavaScript:</label>
+                </div>
+                <input type="radio" name="check-lessons" id="JavaScript-lessons" />
+                <ul class="lesson-list">
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Tìm hiểu về JavaScript</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Biến (Variables)</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Toán tử và hàm</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="unit">
+                <div class="unit-title">
+                  <label class="open-lessons" for="ReactJS-lessons">ReactJS:</label>
+                  <label class="close-lessons" for="close-lessons">ReactJS:</label>
+                </div>
+                <input type="radio" name="check-lessons" id="ReactJS-lessons" />
+                <ul class="lesson-list">
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Tìm hiểu về ReactJS</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">JSX, Components, Props</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Create React App</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="topic">Backend Exercises:</div>
+              <div class="unit">
+                <div class="unit-title">
+                  <label class="open-lessons" for="NodeJS-lessons">NodeJS:</label>
+                  <label class="close-lessons" for="close-lessons">NodeJS:</label>
+                </div>
+                <input type="radio" name="check-lessons" id="NodeJS-lessons" />
+                <ul class="lesson-list">
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Tìm hiểu về NodeJS</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Props</a>
+                  </li>
+                  <li class="lesson">
+                    <a href="#session-9" class="lesson-link">Create</a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
           <div id="training-content" class="content">
+            <div id="preface" class="preface active">
+              <span class="preface-title">Lời nói đầu:</span>
+              <p>
+                Chào mừng bạn đến với dự án "Web Dev Homework - F8 Fullstack Course"! Đây là website cá nhân được tôi
+                xây dựng nhằm tổng hợp và lưu trữ toàn bộ bài tập, sản phẩm thực hành trong suốt quá trình tham gia khóa
+                học Lập trình Web Fullstack do F8 tổ chức.
+              </p>
+              <p>
+                Khóa học với nội dung phong phú, lộ trình bài bản và phương pháp giảng dạy trực quan đã giúp tôi tiếp
+                cận từ những kiến thức nền tảng từ Frontend đến Backend, như HTML, CSS, JavaScript, đến các chủ đề nâng
+                cao hơn như Client - Server và nhiều kỹ thuật phát triển web hiện đại khác. Việc triển khai dự án này
+                không chỉ giúp củng cố và hệ thống hóa kiến thức đã học, mà còn xây dựng một tài nguyên cá nhân dễ dàng
+                tra cứu lại khi cần - đồng thời đặt dấu mốc quan trọng trên hành trình phát triển kỹ năng lập trình của
+                bản thân.
+              </p>
+              <p>
+                Bên cạnh vai trò là kho lưu trữ và nộp bài tập, website này cũng là công cụ giúp tôi theo dõi tiến độ
+                học tập, đánh giá sự tiến bộ qua từng giai đoạn, đồng thời hy vọng sẽ trở thành nguồn tham khảo hữu ích
+                cho những ai đang trên con đường học lập trình.
+              </p>
+              <p>
+                Xin trân trọng cảm ơn đội ngũ giảng viên, trợ giảng và ban tổ chức khóa học F8 đã kiến tạo một chương
+                trình học chất lượng, môi trường đào tạo chuyên nghiệp và sự hỗ trợ tận tình, góp phần quan trọng trong
+                hành trình học tập của tôi.
+              </p>
+            </div>
+
             <section id="session-1" class="training-session">
               <div class="session" data-aos="fade-left" data-delay="3000" data-aos-duration="2000">
                 <a
@@ -190,6 +316,7 @@
                     </div>
                   </li>
                 </ul>
+
                 <div class="repoGitHub">
                   <a
                     class="btn get-start"
@@ -434,14 +561,10 @@
                     href="https://github.com/Thanh-Hoa95/zoom-day9">
                     Repo GitHub
                   </a>
-                  
                 </div>
               </div>
             </section>
 
-            <!-- https://zoom.fullstack.edu.vn/?id=08c901f1-7549-4fb2-8735-342fb35086c6  -->
-
-            <!--
             <section id="features" class="features section-news">
               <div class="row">
                 <div class="col col-left">
@@ -473,27 +596,19 @@
                   </a>
                 </div>
 
-
-
-
-              <div class="send-money">
-                    <div class="fly-icon">
-                      <img src="./assets/images/icons/fly.svg" alt="" />
-                    </div>
-                    <div class="payment">
-                      <span class="money flex-center">
-                        Send Money
-                        <span>- $600</span>
-                      </span>
-                      <span class="receive flex-center">
-                        Airbnb Payment
-                        <span>Sep 23</span>
-                      </span>
-                    </div>
+                <div class="send-money">
+                  <div class="fly-icon">
+                    <img src="./assets/images/icons/fly.svg" alt="" />
                   </div>
-
-                  <div class="income">
-                    <img src="./assets/images/icons/income.svg" alt="" />
+                  <div class="payment">
+                    <span class="money flex-center">
+                      Send Money
+                      <span>- $600</span>
+                    </span>
+                    <span class="receive flex-center">
+                      Airbnb Payment
+                      <span>Sep 23</span>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -501,39 +616,9 @@
 
             <section id="about" class="about section-news">
               <div class="row">
-                 <div class="col col-left">
+                <div class="col col-left">
                   <div class="col-img">
                     <img src="./assets/images/image/img2.png" alt="" />
-                  </div>
-
-                  <div class="method">
-                    <span class="instructions">Choose payment method:</span>
-                    <div class="detail">
-                      <a href="#" class="icon-brand">
-                        <img src="./assets/images/icons/master-card.svg" alt="" />
-                      </a>
-                      <a href="#" class="icon-brand">
-                        <img src="./assets/images/icons/maestro.svg" alt="" />
-                      </a>
-                      <a href="#" class="icon-brand">
-                        <img src="./assets/images/icons/asia-card.svg" alt="" />
-                      </a>
-                    </div>
-
-                    <div class="detail">
-                      <a href="#" class="icon-brand">
-                        <img src="./assets/images/icons/visa-card.svg" alt="" />
-                      </a>
-                      <a href="#" class="icon-brand">
-                        <img src="./assets/images/icons/payper.svg" alt="" />
-                      </a>
-                      <a href="#" class="icon-brand">
-                        <img src="./assets/images/icons/more.svg" alt="" />
-                      </a>
-                    </div>
-                    <a href="#" class="dollar flex-center">
-                      <img src="./assets/images/icons/dolla.svg" alt="" />
-                    </a>
                   </div>
                 </div>
 
@@ -622,7 +707,7 @@
                 </div>
 
                 <div>
-                  <div class="btn read-all">Read All</div>
+                  <div class="btn get-start">Read All</div>
                 </div>
               </div>
 
@@ -677,7 +762,7 @@
                   </div>
                 </div>
               </div>
-            </section> -->
+            </section>
 
             <section id="download-app">
               <div class="download-app">
