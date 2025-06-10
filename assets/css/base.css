@@ -297,7 +297,6 @@ button,
   left: 0;
   color: #dbe3f1;
   border-bottom: 1px solid;
-  overflow: hidden;
   z-index: 999999;
 }
 

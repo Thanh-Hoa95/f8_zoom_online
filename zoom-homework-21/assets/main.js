@@ -53,7 +53,7 @@ Array.prototype.reduce2 = function (callback, initialValue) {
 
   if (accumulator === undefined) {
     accumulator = this[0];
-    startIndex = 1;
+    j = 1;
   }
 
   for (let i = j; i < this.length; i++) {
