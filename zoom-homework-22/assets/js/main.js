@@ -10,7 +10,19 @@ const modalCloseBtn = $(".modal-close");
 const inputElement = $("#taskTitle");
 const todoAppForm = $(".todo-app-form");
 //---------------
-const todoTasks = [];
+const todoTasks = [
+  {
+    title: "inputElement.value",
+    description: "#taskDescription",
+    category: "#taskCategory",
+    priority: "#taskPriority",
+    startTime: 12,
+    endTime: 13,
+    DuaDate: 12 / 6 / 2025,
+    cardColor: "yellow",
+    isCompleted: false,
+  },
+];
 todoAdd.onclick = function (event) {
   event.preventDefault();
   // Focus input dau tien khi mo modal
