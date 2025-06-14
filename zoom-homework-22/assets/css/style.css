@@ -1714,3 +1714,11 @@ body {
     text-align: center;
   }
 }
+
+.back {
+  display: block;
+  padding-block: 20px;
+  color: orange;
+  width: 100px;
+  text-decoration: none;
+}
