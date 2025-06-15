@@ -15,11 +15,8 @@ searchInput.oninput = function (event) {
 };
 
 let editIndex = null;
-/*
-git clone git@github-HaTrang:Thanh-Hoa95/f8_zoom_online.git
 
-*/
-addBtn.onclick = function (event) {
+addBtn.onclick = function () {
   handleOpenModal();
 
   setTimeout(() => taskTitle.focus(), 100);
@@ -37,24 +34,19 @@ todoList.onclick = function (event) {
     editIndex = taskIndex;
 
     for (const key in task) {
-      const value = task[key];
       const input = $(`[name="${key}"]`);
-
-      if (input) {
-        input.value = value;
-      }
+      if (input) input.value = task[key];
     }
-    handleOpenModal();
-    const formTitle = formApp.querySelector(".modal-title");
 
+    handleOpenModal();
+
+    const formTitle = formApp.querySelector(".modal-title");
     if (formTitle) {
       formTitle.dataset.original = formTitle.textContent;
-
       formTitle.textContent = "Edit Task";
     }
 
     const btnSubmit = formApp.querySelector(".btn-submit");
-
     if (btnSubmit) {
       btnSubmit.dataset.original = btnSubmit.textContent;
       btnSubmit.textContent = "Save";
@@ -64,6 +56,7 @@ todoList.onclick = function (event) {
   if (deleteBtn) {
     const taskIndex = deleteBtn.dataset.index;
     const task = todoTask[taskIndex];
+
     if (confirm(`Bạn có muốn xóa công việc ${task.title} không?`)) {
       todoTask.splice(taskIndex, 1);
       saveTodoTask();
@@ -74,9 +67,27 @@ todoList.onclick = function (event) {
   if (completeBtn) {
     const taskIndex = completeBtn.dataset.index;
     const task = todoTask[taskIndex];
-    task.isCompleted = !task.isCompleted;
-    saveTodoTask();
-    renderTask();
+
+    editIndex = taskIndex;
+
+    for (const key in task) {
+      const input = $(`[name="${key}"]`);
+      if (input) input.value = task[key];
+    }
+
+    handleOpenModal();
+
+    const formTitle = formApp.querySelector(".modal-title");
+    if (formTitle) {
+      formTitle.dataset.original = formTitle.textContent;
+      formTitle.textContent = "Cập nhật tiến độ";
+    }
+
+    const btnSubmit = formApp.querySelector(".btn-submit");
+    if (btnSubmit) {
+      btnSubmit.dataset.original = btnSubmit.textContent;
+      btnSubmit.textContent = "Cập nhật";
+    }
   }
 };
 
@@ -87,35 +98,26 @@ function handleOpenModal() {
 function handleCloseModal() {
   formApp.classList.remove("show");
 
-  if (editIndex) {
+  if (editIndex !== null) {
     const formTitle = formApp.querySelector(".modal-title");
-
-    if (formTitle) {
+    if (formTitle?.dataset.original) {
       formTitle.textContent = formTitle.dataset.original;
       delete formTitle.dataset.original;
     }
 
     const btnSubmit = formApp.querySelector(".btn-submit");
-
-    if (btnSubmit) {
+    if (btnSubmit?.dataset.original) {
       btnSubmit.textContent = btnSubmit.dataset.original;
       delete btnSubmit.dataset.original;
     }
   }
 
   formApp.querySelector(".modal").scrollTop = 0;
-
   todoForm.reset();
   editIndex = null;
 }
 
-modalClose.onclick = function (event) {
-  handleCloseModal();
-};
-
-btnClose.onclick = function (event) {
-  handleCloseModal();
-};
+modalClose.onclick = btnClose.onclick = handleCloseModal;
 
 const todoTask = JSON.parse(localStorage.getItem("todoTasks")) ?? [];
 
@@ -124,15 +126,19 @@ todoForm.onsubmit = function (event) {
 
   const formData = Object.fromEntries(new FormData(todoForm));
 
-  if (editIndex) {
+  // Xử lý phần trăm
+  formData.percent = Number(formData.percent || 0);
+  formData.isCompleted = formData.percent >= 100;
+
+  if (editIndex !== null) {
     todoTask[editIndex] = formData;
   } else {
-    formData.isCompleted = false;
     todoTask.push(formData);
   }
-  handleCloseModal();
+
   saveTodoTask();
   renderTask();
+  handleCloseModal();
 };
 
 function saveTodoTask() {
@@ -141,39 +147,45 @@ function saveTodoTask() {
 
 function renderTask() {
   if (!todoTask.length) {
-    todoList.innerHTML = `<h3 class="no-task">Chưa có công việc!!!</h3>`;
+    todoList.innerHTML = `<h3 class="no-task">Việc chưa có nhìn cái gì ?</h3>`;
     return;
   }
 
   const html = todoTask
-    .map(
-      (task, index) => `
-<div class="task-card ${task.isCompleted ? "completed" : ""}" style="--card-color:${task.color}" >
-          <div class="task-header">
-            <h3 class="task-title">${task.title}</h3>
-            <button class="task-menu">
-              <i class="fa-solid fa-ellipsis fa-icon"></i>
-              <div class="dropdown-menu">
-                <div class="dropdown-item edit-btn" data-index= "${index}">
-                  <i class="fa-solid fa-pen-to-square fa-icon"></i>
-                  Edit
-                </div>
-                <div class="dropdown-item complete complete-btn" data-index= "${index}">
-                  <i class="fa-solid fa-check fa-icon"></i>
-                  ${task.isCompleted ? "Mark as Active" : "Mark as Completed"}
-                </div>
-                <div class="dropdown-item delete delete-btn" data-index= "${index}">
-                  <i class="fa-solid fa-trash fa-icon"></i>
-                  Delete
-                </div>
+    .map((task, index) => {
+      const statusText = task.percent >= 100 ? "Đã hoàn thành" : "Chưa hoàn thành";
+      const statusColor = task.percent >= 100 ? "green" : "red";
+
+      return `
+      <div class="task-card ${task.isCompleted ? "completed" : ""}" style="--card-color:${task.color}">
+        <div class="task-header">
+          <h3 class="task-title">${task.title}</h3>
+          <button class="task-menu">
+            <i class="fa-solid fa-ellipsis fa-icon"></i>
+            <div class="dropdown-menu">
+              <div class="dropdown-item edit-btn" data-index="${index}">
+                <i class="fa-solid fa-pen-to-square fa-icon"></i>
+                Edit
               </div>
-            </button>
-          </div>
-          <p class="task-description">${task.description}</p>
-          <div class="task-time">${task.start_time} - ${task.end_time}</div>
+              <div class="dropdown-item complete complete-btn" data-index="${index}">
+                <i class="fa-solid fa-check fa-icon"></i>
+                Cập nhật tiến độ
+              </div>
+              <div class="dropdown-item delete delete-btn" data-index="${index}">
+                <i class="fa-solid fa-trash fa-icon"></i>
+                Delete
+              </div>
+            </div>
+          </button>
         </div>
-  `,
-    )
+        <p class="task-description">${task.description}</p>
+        <div class="task-time">${task.start_time} - ${task.end_time}</div>
+        <div class="task-status" style="color:${statusColor}">
+          ${statusText} (${task.percent || 0}%)
+        </div>
+      </div>
+      `;
+    })
     .join("");
 
   todoList.innerHTML = html;
