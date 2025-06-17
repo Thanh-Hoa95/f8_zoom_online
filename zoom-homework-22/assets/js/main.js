@@ -169,7 +169,7 @@ function renderTask(tasks) {
   if (!tasks.length) {
     todoList.innerHTML = `
         <div class="no-task">
-            <img src="./assets/image/search.svg" alt="" />
+            <img src="./assets/image/search.svg" alt="search.svg" />
             <h3 class="no-task">Việc chưa có nhìn cái gì ?</h3>
         </div>`;
     return;
