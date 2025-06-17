@@ -246,7 +246,7 @@ body {
 }
 
 .task-menu:focus .dropdown-menu,
-.dropdown-menu.show {
+.task-header.show .dropdown-menu {
   display: block;
 }
 
@@ -362,6 +362,12 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.form-label span {
+  margin-left: 10px;
+  color: #ff0000;
+  font-size: 18px;
+}
+
 .form-input,
 .form-textarea,
 .form-select {
@@ -424,6 +430,8 @@ body {
 }
 
 .task-card {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding: 1rem;
   border-radius: 12px;
@@ -457,6 +465,7 @@ body {
   position: relative;
 }
 .task-header {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -497,15 +506,9 @@ body {
   font-size: 0.875rem;
   font-weight: 500;
   color: #374151;
+  margin-bottom: 8px;
 }
 
-/*
-
-
-
-
-
-*/
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -579,9 +582,74 @@ input[name="color"] {
 }
 .no-task {
   grid-column: 2;
-  font-size: 36px;
+  font-size: 30px;
   font-style: italic;
   font-weight: 600;
   text-align: center;
   color: #f8f;
+}
+
+.todo-list {
+  flex: 1;
+  margin-bottom: 10px;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-transform: capitalize;
+  padding-block: 4px;
+}
+
+.todo-list li span {
+  font-size: 12px;
+}
+
+.todo-list li p {
+  margin-bottom: 2px;
+}
+
+.my-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  transition: border-color 0.2s;
+}
+
+.calendar-label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-date input {
+  all: unset;
+  position: absolute;
+  width: 28px;
+  opacity: 0;
+  z-index: 99;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.flc-title {
+  text-align: center;
+  padding-block: 50px;
+}
+
+.flc-img {
+  display: block;
+  margin-inline: auto;
+  width: 100%;
+  max-width: 900px;
 }
