@@ -170,7 +170,7 @@ function renderTask(tasks) {
     todoList.innerHTML = `
         <div class="no-task">
             <img src="./assets/image/search.svg" alt="search.svg" />
-            <h3 class="no-task">Việc chưa có nhìn cái gì ?</h3>
+            <h3 class="no-task">Chưa có công việc nào!</h3>
         </div>`;
     return;
   }
