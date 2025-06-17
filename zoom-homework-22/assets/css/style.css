@@ -647,6 +647,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   text-align: center;
   padding-block: 50px;
   color: #f88;
+  font-size: 22px;
 }
 
 .flc-img {

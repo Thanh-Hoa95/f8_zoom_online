@@ -119,7 +119,29 @@ function handleCloseModal() {
 
 modalClose.onclick = btnClose.onclick = handleCloseModal;
 
-let todoTask = JSON.parse(localStorage.getItem("todoTasks")) ?? [];
+let todoTask = JSON.parse(localStorage.getItem("todoTasks")) ?? [
+  {
+    color: "#3cfb98",
+    dueDate: "2025-06-17",
+    isCompleted: true,
+    percent: 100,
+    task1: "Xuân Pháo",
+    task2: "Tắm",
+    task4: "Nâu cơm",
+    task5: "Học fst f8!",
+  },
+  {
+    color: "#4163ec",
+    dueDate: "2025-06-18",
+    isCompleted: false,
+    percent: 0,
+    task1: "Thức dạy",
+    task2: "học fst f8!",
+    task3: "đi dạo",
+    task4: "",
+    task5: "hẹ hẹ",
+  },
+];
 
 searchInput.oninput = function (event) {
   const keyword = event.target.value.toLowerCase();
