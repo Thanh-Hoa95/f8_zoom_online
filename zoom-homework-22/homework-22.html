@@ -3,20 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/image/favicon.svg" rel="icon" />
+
     <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="../assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <a class="back" href="../#storages">Về Trang Chủ</a>
-
     <header class="header">
       <div class="header-content">
-        <div class="logo">
+        <a class="logo" href="../#preface">
           <div class="logo-icon"></div>
           <span class="logo-text">F8 Todo</span>
-        </div>
+        </a>
 
         <h1 class="header-title">Todo List</h1>
 
@@ -49,8 +49,9 @@
       <!-- Tabs -->
       <div class="tabs">
         <div class="tab-list">
-          <button class="tab-button active">Active Task</button>
-          <button class="tab-button">Completed</button>
+          <button class="tab-button all active">All Task</button>
+          <button class="tab-button active-task">Active Task</button>
+          <button class="tab-button completed">Completed</button>
         </div>
       </div>
 
@@ -62,7 +63,7 @@
     <div class="modal-overlay" id="addTaskModal">
       <div class="modal">
         <div class="modal-header">
-          <h2 class="modal-title">Add New Task</h2>
+          <h2 class="modal-title">Add daily work</h2>
           <button class="modal-close">
             <i class="fa-solid fa-xmark fa-icon"></i>
           </button>
@@ -70,46 +71,31 @@
         <div class="modal-body">
           <form class="todo-app-form">
             <div class="form-group">
-              <label class="form-label" for="taskTitle">Task Title *</label>
-              <input
-                type="text"
-                id="taskTitle"
-                class="form-input"
-                name="title"
-                placeholder="Enter task title"
-                required />
+              <label class="form-label" for="task1">
+                Work One
+                <span>*</span>
+              </label>
+              <input type="text" id="task1" class="form-input" name="task1" placeholder="Enter Work One!" required />
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="taskDescription">Description</label>
-              <textarea
-                id="taskDescription"
-                class="form-textarea"
-                name="description"
-                placeholder="Enter task description"></textarea>
+              <label class="form-label" for="task2">Second Task</label>
+              <input type="text" id="task2" class="form-input" name="task2" placeholder="Enter Second Task!" />
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="taskCategory">Category</label>
-              <select id="taskCategory" class="form-select" name="category">
-                <option value="">Select category</option>
-                <option value="meeting">Meeting</option>
-                <option value="design">Design</option>
-                <option value="development">Development</option>
-                <option value="planning">Planning</option>
-                <option value="client">Client Work</option>
-                <option value="other">Other</option>
-              </select>
+              <label class="form-label" for="task3">Third Task</label>
+              <input type="text" id="task3" class="form-input" name="task3" placeholder="Enter Third Task!" />
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="taskPriority">Priority</label>
-              <select id="taskPriority" class="form-select" name="priority">
-                <option value="low">Low</option>
-                <option value="medium" selected>Medium</option>
-                <option value="high">High</option>
-                <option value="urgent">Urgent</option>
-              </select>
+              <label class="form-label" for="task4">Fourth Job</label>
+              <input type="text" id="task4" class="form-input" name="task4" placeholder="Enter Fourth Job!" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="task5">Fifth Job</label>
+              <input type="text" id="task5" class="form-input" name="task5" placeholder="Enter Fifth Job!" />
             </div>
 
             <div class="form-group">
@@ -127,8 +113,17 @@
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="taskDate">Due Date</label>
-              <input type="date" id="taskDate" class="form-input" name="dueDate" />
+              <label class="form-label" for="taskDate">
+                Due Date
+                <span>*</span>
+              </label>
+              <div class="my-date">
+                <div class="formatted-date"></div>
+                <label class="calendar-label" for="taskDate">
+                  📅
+                  <input type="date" id="taskDate" class="form-input" name="dueDate" required />
+                </label>
+              </div>
             </div>
 
             <div class="form-group">
@@ -156,6 +151,8 @@
       </div>
     </div>
 
+    <h2 class="flc-title">KẾT QUẢ HOÀN THÀNH FLASHCARD</h2>
+    <img class="flc-img" src="./assets/image/flc.png" alt="flashcard" />
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
