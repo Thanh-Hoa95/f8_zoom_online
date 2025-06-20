@@ -2,36 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slideshow</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link rel="stylesheet" href="./assest/css/slide.css" />
   </head>
   <body>
-    <a href="./index.html">Về trang chủ</a>
-
-    <div class="slideshow-container" id="slideshow">
-      <div class="slide active"><img src="./assest/img/img-2.png" alt="Slide 1" /></div>
-      <div class="slide"><img src="./assest/img/img-3.png" alt="Slide 2" /></div>
-      <div class="slide"><img src="./assest/img/img-4.png" alt="Slide 3" /></div>
-      <div class="slide"><img src="./assest/img/img-5.png" alt="Slide 4" /></div>
-      <div class="slide"><img src="./assest/img/img-6.png" alt="Slide 5" /></div>
-      <div class="slide"><img src="./assest/img/img-7.png" alt="Slide 6" /></div>
-
-      <button class="prev">
-        <i class="fa-solid fa-chevron-left"></i>
-      </button>
-      <button class="next">
-        <i class="fa-solid fa-chevron-right"></i>
-      </button>
-
-      <div class="dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
+    <div class="slideshow-container">
+      <div class="slides-wrapper">
+        <div class="slide"><img src="./assest/img/img-10.png" alt="Slide 1" /></div>
+        <div class="slide"><img src="./assest/img/img-1.png" alt="Slide 2" /></div>
+        <div class="slide"><img src="./assest/img/img-7.png" alt="Slide 3" /></div>
+        <div class="slide"><img src="./assest/img/img-3.png" alt="Slide 4" /></div>
+        <div class="slide"><img src="./assest/img/img-8.png" alt="Slide 5" /></div>
+        <div class="slide"><img src="./assest/img/img-5.png" alt="Slide 6" /></div>
       </div>
+      <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+      <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="pagination"></div>
     </div>
 
     <script src="./assest/js/slide.js"></script>

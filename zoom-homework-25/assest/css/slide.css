@@ -1,48 +1,45 @@
-body {
+* {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #ccb6ff;
+}
+
+body {
+  background: #f0f0f0;
+  font-family: "Segoe UI", sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
 
-a {
-  position: absolute;
-  text-decoration: none;
-  color: inherit;
-  top: 2%;
-  background-color: #ffc5c5;
-  padding: 8px 20px;
-  border-radius: 10px;
+.slideshow-container {
+  width: 800px;
+  height: 450px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  background: #fff;
 }
 
-.slideshow-container {
-  position: relative;
-  width: 800px;
-  height: 400px;
-  overflow: hidden;
-  background: #111;
+.slides-wrapper {
+  display: flex;
+  transition: transform 0.6s ease;
+  height: 100%;
 }
 
 .slide {
-  position: absolute;
-  width: 100%;
+  min-width: 100%;
   height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.slide.active {
-  opacity: 1;
-  z-index: 1;
+  position: relative;
 }
 
 .slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .prev,
@@ -50,52 +47,54 @@ a {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #fff;
-  color: black;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #fff;
   border: none;
-  padding: 10px;
+  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
   cursor: pointer;
-  border-radius: 999px;
-  width: 32px;
-  height: 32px;
-  z-index: 2;
-  opacity: 0.4;
-  transition: opacity 0.3s ease;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .prev:hover,
 .next:hover {
-  opacity: 0.8;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .prev {
-  left: 10px;
+  left: 16px;
 }
 
 .next {
-  right: 10px;
+  right: 16px;
 }
 
-.dots {
+.pagination {
   position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-  text-align: center;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
   z-index: 10;
 }
 
-.dot {
-  height: 12px;
+.pagination span {
   width: 12px;
-  margin: 0 5px;
-  background-color: #bbb;
+  height: 12px;
+  background-color: rgba(255, 255, 255, 0.6);
   border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.3s ease;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: 1px solid #fff;
 }
 
-.dot.active {
+.pagination .active {
   background-color: #fff;
 }
