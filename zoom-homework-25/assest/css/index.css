@@ -5,13 +5,13 @@
   gap: 100px;
   text-decoration: none;
   font-size: 32px;
+  list-style: none;
 }
 
 .list-item a {
   text-decoration: none;
   color: rgb(108, 157, 255);
   padding: 8px 60px;
-  list-style: none;
 }
 
 .item {

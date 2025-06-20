@@ -1,17 +1,14 @@
-document.querySelectorAll(".js-tab-list").forEach((tabList) => {
-  const tabItems = tabList.querySelectorAll(".tab-item");
-  tabItems.forEach((tab, i) => {
-    tab.tabIndex = 0;
-    tab.addEventListener("click", () => {
-      tabList.querySelector(".active")?.classList.remove("active");
-      tab.classList.add("active");
-    });
-    tab.addEventListener("keydown", (e) => {
-      const keyNum = Number(e.key);
-      if (!isNaN(keyNum) && keyNum >= 1 && keyNum <= tabItems.length) {
-        tabList.querySelector(".active")?.classList.remove("active");
-        tabItems[keyNum - 1].classList.add("active");
+document.querySelectorAll(".js-tab-list").forEach((tabs) => {
+  tabs.tabIndex = 0;
+  tabs.addEventListener("keydown", handleActiveTab);
+  tabs.addEventListener("click", handleActiveTab);
+
+  function handleActiveTab(e) {
+    tabs.querySelectorAll(".js-tab-item").forEach((tab, i) => {
+      if (i === e.key - 1 || tab === e.target.closest(".js-tab-item")) {
+        tabs.querySelector(".active")?.classList.remove("active");
+        tab.classList.add("active");
       }
     });
-  });
+  }
 });
