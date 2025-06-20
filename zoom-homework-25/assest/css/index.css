@@ -9,13 +9,13 @@
 
 .list-item a {
   text-decoration: none;
+  color: rgb(108, 157, 255);
+  padding: 8px 60px;
+  list-style: none;
 }
 
 .item {
   background-color: pink;
-  padding: 8px 20px;
   border-radius: 10px;
-  width: 250px;
   text-align: center;
-  color: rgb(113, 220, 255);
 }

@@ -55,7 +55,7 @@ function goToSlide(index) {
       currentIndex = slides.length - 2;
       slidesWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
-  }, 500);
+  }, 0);
 }
 
 function nextSlide() {
@@ -70,7 +70,7 @@ nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
 
 function startAutoplay() {
-  interval = setInterval(nextSlide, 3000);
+  interval = setInterval(nextSlide, 6000);
 }
 
 function stopAutoplay() {

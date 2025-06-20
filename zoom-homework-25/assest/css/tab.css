@@ -10,21 +10,12 @@
   position: relative;
 }
 
-.tab-item {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-size: 32px;
-  /* text-align: center; */
-}
-/* fs16; p4 12 */
 .tab-item .sub-title {
   padding: 4px 12px;
   cursor: pointer;
   transition: background 0.3s linear;
   border-bottom: 2px solid transparent;
   font-size: 20px;
-  /* width: 150px; */
 }
 
 .tab-item.active .sub-title {
@@ -50,10 +41,6 @@
   color: aliceblue;
   padding: 20px;
   display: block;
-}
-
-.tab-item.active .sub-title {
-  width: 150px;
 }
 
 a {
